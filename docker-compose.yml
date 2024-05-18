@@ -1,0 +1,39 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=coroutines_study
+    ports:
+      - "5432:5432"
+    restart: always
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=root@root.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "5050:80"
+    restart: always
+
+  wiremock:
+    container_name: wiremock
+    image: wiremock/wiremock:latest
+    volumes:
+      - ./wiremock/files:/home/wiremock/__files
+      - ./wiremock/mappings:/home/wiremock/mappings
+    command: "--global-response-templating --verbose"
+    ports:
+      - "8085:8080"
+
+volumes:
+  postgres-data:
+  pgadmin-data:
