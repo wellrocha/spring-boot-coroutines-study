@@ -1,0 +1,17 @@
+{
+  "id" : "473eccf8-1c32-41d5-a7f2-648771a37115",
+  "name" : "get_score_serasa",
+  "request" : {
+    "urlPattern" : "/receita-federal/situacao-cadastral\\?cpf=[0-9]+\\&data-nascimento=[0-9]+",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"situacao_cadastral\":\"regular\"}",
+    "headers" : {
+      "Content-Type" : "application/json;charset=UTF-8"
+    },
+    "fixedDelayMilliseconds": 500
+  },
+  "uuid" : "473eccf8-1c32-41d5-a7f2-648771a37115"
+}

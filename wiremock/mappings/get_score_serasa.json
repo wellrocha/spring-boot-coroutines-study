@@ -1,0 +1,17 @@
+{
+  "id" : "7fa2cfe8-3f5d-4083-8859-8b69de2efa4e",
+  "name" : "get_score_serasa",
+  "request" : {
+    "urlPattern" : "/serasa/score\\?cpf=[0-9]+",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"score\":900,\"rating\":\"great\"}",
+    "headers" : {
+      "Content-Type" : "application/json;charset=UTF-8"
+    },
+    "fixedDelayMilliseconds": 500
+  },
+  "uuid" : "7fa2cfe8-3f5d-4083-8859-8b69de2efa4e"
+}
